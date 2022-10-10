@@ -6,14 +6,14 @@
 /*   By: mjuin <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 16:11:27 by mjuin             #+#    #+#             */
-/*   Updated: 2022/10/10 12:09:35 by mjuin            ###   ########.fr       */
+/*   Updated: 2022/10/10 16:56:32 by mjuin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include <stdarg.h>
 #include <stdio.h>
-
+#include <stdint.h>
 
 int ft_printf(const char *, ...);
 
@@ -120,8 +120,8 @@ int	ft_printf(const char *str, ...)
 					ft_putstr_fd("0X", 1);
 				ft_puthexa_fd(va_arg(arglist,unsigned int), 1, 1);
 			}
-			/*else if (str[pos] == 'p')
-				ft_puthexa_fd(va_arg(arglist,void *), 0, 1);*/
+			else if (str[pos] == 'p')
+				ft_puthexa_fd(va_arg(arglist, unsigned int), 0, 1);
 			/*else if (str[pos] != '\0')
 			{
 				ft_putchar_fd(str[pos - 1], 1);
