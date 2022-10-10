@@ -6,7 +6,7 @@
 /*   By: mjuin <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 13:50:12 by mjuin             #+#    #+#             */
-/*   Updated: 2022/10/09 21:44:00 by mjuin            ###   ########.fr       */
+/*   Updated: 2022/10/10 12:02:45 by mjuin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ int ft_printf(const char *, ...);
 
 int	main(void)
 {
-	char *i = "test985";
-	ft_printf("%X", 958);
+
+	int	i = 958;
+	printf("%+ i \n", i);
+	ft_printf("%+ i", i);
 	return (0);
 }
