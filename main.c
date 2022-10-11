@@ -6,7 +6,7 @@
 /*   By: mjuin <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 13:50:12 by mjuin             #+#    #+#             */
-/*   Updated: 2022/10/10 16:42:31 by mjuin            ###   ########.fr       */
+/*   Updated: 2022/10/11 10:14:08 by mjuin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(void)
 {
 
 	int	i = 958;
-	printf("%p \n", &i);
-	ft_printf("%p", &i);
+	printf("Base = %p\n", &i);
+	ft_printf("Custom = %p", &i);
 	return (0);
 }
