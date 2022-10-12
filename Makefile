@@ -8,21 +8,20 @@ CFLAGS	= -Wall -Wextra -Werror
 
 RM	= rm -f
 
-LIB =	rlibft
-
 SRCS	= ft_puthexa_fd.c \
 		ft_uputnbr_fd.c \
 		ft_printf.c
 
 OBJS	= ${SRCS:.c=.o}
 
-.c.o:
-	${CC} ${CFLAGS} -c $< -L libft/libft.h -o ${<:.c=.o} 
+.c.o:                                                                           
+	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 all: $(NAME)
 
-$(NAME): ${LIB} ${OBJS} 
-	${AR} ${NAME} ${OBJS}
+$(NAME): rlibft ${OBJS}
+	cp libft/libft.a ./$(NAME)
+	${AR} ${NAME}  ${OBJS} 
 
 clean:
 	cd libft; make fclean

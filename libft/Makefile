@@ -6,7 +6,7 @@
 #    By: mjuin <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/27 10:16:13 by mjuin             #+#    #+#              #
-#    Updated: 2022/10/11 11:19:09 by mjuin            ###   ########.fr        #
+#    Updated: 2022/10/12 10:39:58 by mjuin            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	= libft.a
 
 CC	= gcc
 
-AR	= ar rcs
+AR	= ar rc
 
 CFLAGS	= -Wall -Wextra -Werror
 
@@ -88,5 +88,9 @@ fclean:	clean
 
 re:	fclean all
 
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(BNS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS) $(BNSS)
+
 .PHONY:
-	re fclean clean all bonus
+	re fclean clean all bonus so

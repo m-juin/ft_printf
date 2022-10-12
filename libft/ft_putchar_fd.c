@@ -6,13 +6,14 @@
 /*   By: mjuin <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 14:09:59 by mjuin             #+#    #+#             */
-/*   Updated: 2022/09/30 14:16:52 by mjuin            ###   ########.fr       */
+/*   Updated: 2022/10/12 12:29:17 by mjuin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+size_t	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
+	return (1);
 }

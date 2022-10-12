@@ -6,21 +6,18 @@
 /*   By: mjuin <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 13:50:12 by mjuin             #+#    #+#             */
-/*   Updated: 2022/10/11 10:14:08 by mjuin            ###   ########.fr       */
+/*   Updated: 2022/10/12 13:14:34 by mjuin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
-#include <stdarg.h>
 #include <stdio.h>
-
-int ft_printf(const char *, ...);
+#include "ft_printf.h"
 
 int	main(void)
 {
-
 	int	i = 958;
-	printf("Base = %p\n", &i);
-	ft_printf("Custom = %p", &i);
+	printf(" NULL %s NULL ", NULL);
+	//ft_printf(" NULL %s NULL ", NULL);
 	return (0);
 }

@@ -6,17 +6,21 @@
 /*   By: mjuin <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 10:43:29 by mjuin             #+#    #+#             */
-/*   Updated: 2022/10/11 13:11:54 by mjuin            ###   ########.fr       */
+/*   Updated: 2022/10/12 12:33:41 by mjuin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_uputnbr_fd(unsigned int nbr, int fd)
+size_t	ft_uputnbr_fd(unsigned int nbr, int fd)
 {
+	size_t	size;
+
+	size = 0;
 	if (nbr > 9)
 	{
-		ft_uputnbr_fd(nbr / 10, fd);
+		size += ft_uputnbr_fd(nbr / 10, fd);
 	}
-	ft_putchar_fd(((nbr % 10) + '0'), fd);
+	size += ft_putchar_fd(((nbr % 10) + '0'), fd);
+	return (size);
 }

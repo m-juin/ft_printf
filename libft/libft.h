@@ -6,7 +6,7 @@
 /*   By: mjuin <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 15:01:10 by mjuin             #+#    #+#             */
-/*   Updated: 2022/10/02 15:13:27 by mjuin            ###   ########.fr       */
+/*   Updated: 2022/10/12 12:37:26 by mjuin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,10 @@ char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
+size_t	ft_putchar_fd(char c, int fd);
+size_t	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
+size_t	ft_putnbr_fd(int n, int fd);
 
 /* BONUS */
 typedef struct s_list

@@ -6,19 +6,23 @@
 /*   By: mjuin <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 14:09:59 by mjuin             #+#    #+#             */
-/*   Updated: 2022/10/01 15:13:33 by mjuin            ###   ########.fr       */
+/*   Updated: 2022/10/12 13:16:38 by mjuin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+size_t	ft_putstr_fd(char *s, int fd)
 {
-	int	pos;
+	size_t	pos;
 
 	if (s == NULL)
-		return ;
+		s = "(null)";
 	pos = 0;
 	while (s[pos])
-		ft_putchar_fd(s[pos++], fd);
+	{
+		ft_putchar_fd(s[pos], fd);
+		pos++;
+	}
+	return (pos);
 }
