@@ -6,7 +6,7 @@
 #    By: mjuin <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/27 10:16:13 by mjuin             #+#    #+#              #
-#    Updated: 2022/10/04 14:46:51 by mjuin            ###   ########.fr        #
+#    Updated: 2022/10/11 11:19:09 by mjuin            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	= libft.a
 
 CC	= gcc
 
-AR	= ar rc
+AR	= ar rcs
 
 CFLAGS	= -Wall -Wextra -Werror
 
