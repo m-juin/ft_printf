@@ -6,42 +6,46 @@
 /*   By: mjuin <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 16:11:27 by mjuin             #+#    #+#             */
-/*   Updated: 2022/10/12 13:19:24 by mjuin            ###   ########.fr       */
+/*   Updated: 2022/10/21 11:45:19 by mjuin            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	ft_convert(const char *str, int pos, va_list aglst, size_t *write)
+static int	ft_convert(const char *str, int pos, va_list aglst)
 {	
+	int	size;
+
+	size = 0;
 	if (str[pos] == '%')
-		*write += ft_putchar_fd(str[pos], 1);
+		size += ft_putchar_fd(str[pos], 1);
 	else if (str[pos] == 'c')
-		*write += ft_putchar_fd(va_arg(aglst, int), 1);
+		size += ft_putchar_fd(va_arg(aglst, int), 1);
 	else if (str[pos] == 's')
-		*write += ft_putstr_fd(va_arg(aglst, char *), 1);
+		size += ft_putstr_fd(va_arg(aglst, char *), 1);
 	else if (str[pos] == 'i' || str[pos] == 'd')
-		*write += ft_putnbr_fd(va_arg(aglst, int), 1);
+		size += ft_putnbr_fd(va_arg(aglst, int), 1);
 	else if (str[pos] == 'u')
-		*write += ft_uputnbr_fd(va_arg(aglst, unsigned int), 1);
+		size += ft_uputnbr_fd(va_arg(aglst, unsigned int), 1);
 	else if (str[pos] == 'x')
-		*write += ft_puthexa_fd(va_arg(aglst, unsigned int), 0, 1, 0);
+		size += ft_puthexa_fd(va_arg(aglst, unsigned int), 0, 1, 0);
 	else if (str[pos] == 'X')
-		*write += ft_puthexa_fd(va_arg(aglst, unsigned int), 1, 1, 0);
+		size += ft_puthexa_fd(va_arg(aglst, unsigned int), 1, 1, 0);
 	else if (str[pos] == 'p')
-		*write += ft_puthexa_fd(va_arg(aglst, long unsigned int), 0, 1, 1);
+		size += ft_puthexa_fd(va_arg(aglst, long unsigned int), 0, 1, 1);
 	else if (str[pos] != '\0')
 	{
-		*write += ft_putchar_fd(str[pos - 1], 1);
-		*write += ft_putchar_fd(str[pos], 1);
+		size = ft_putchar_fd(str[pos - 1], 1);
+		size += ft_putchar_fd(str[pos], 1);
 	}
+	return (size);
 }
 
 int	ft_printf(const char *str, ...)
 {
 	va_list		arglist;
 	int			pos;
-	size_t		size;
+	int			size;
 
 	va_start(arglist, str);
 	pos = 0;
@@ -51,11 +55,12 @@ int	ft_printf(const char *str, ...)
 		if (str[pos] == '%')
 		{
 			pos++;
-			ft_convert(str, pos, arglist, &size);
+			size += ft_convert(str, pos, arglist);
 		}
 		else
 			size += ft_putchar_fd(str[pos], 1);
 		pos++;
 	}
+	va_end(arglist);
 	return (size);
 }
