@@ -40,8 +40,8 @@ For the bonus part of the project there, are 6 "flags" to be handle:
 
 ``make`` to compile.
 
-``clean`` to clean all compiled file without the library file.
+``clean`` to clean all compiled files without the library file.
 
-``fclean`` to clean all compiled file with the library file.
+``fclean`` to clean all compiled files with the library file.
 
 ``re`` to fclean then make.
