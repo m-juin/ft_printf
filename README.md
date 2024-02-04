@@ -4,7 +4,7 @@
 # Project
 ft_printf is one of the three project in the 42 program second circle. It aims to introduce the students to the standard C functions ***printf*** by writing a library that contains their own version.
 
-# Contraint
+# Constraints
 According to the subject there only one contraint for this project:
 *  The whole files of the projects need to follow 42 norm ([Link](https://github.com/42School/norminette/blob/master/pdf/en.norm.pdf))
 
